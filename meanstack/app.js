@@ -12,6 +12,7 @@ var app = express();
 
 const route = require('./routes/route');
 
+app.use(cors());
 //body-parser
 app.use(bodyparser.json());
 
@@ -33,11 +34,6 @@ mongoose.connection.on('error', (err)=>{
 const port = 3000;
 
 app.use('/api', route);
-
-//adding middleware - cors
-app.use(cors());
-
-
 
 //static files
 app.use(express.static(path.join(__dirname, 'public')))

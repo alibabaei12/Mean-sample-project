@@ -38,10 +38,11 @@ router.post('/contacts', (req,res, next)=>{
 //delte contacts
 router.delete('/contacts/:id', (req,res, next)=>{
     //logic to delete contact
+   
     contact.remove({_id: req.params.id}, function(err, result){
         if(err)
         {
-            res.json(err);
+            res.json( err);
         }
         else{
             res.json(result);
